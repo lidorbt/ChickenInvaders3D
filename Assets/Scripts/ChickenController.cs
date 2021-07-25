@@ -26,11 +26,11 @@ public class ChickenController : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        CursorController.instance.ActiateRedAimCursor();
+        CursorController.instance.ActivateRedAimCursor();
     }
 
     private void OnMouseExit()
     {
-        CursorController.instance.ActiateAimCursor();
+        CursorController.instance.ActivateAimCursor();
     }
 }

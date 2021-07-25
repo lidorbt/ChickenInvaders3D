@@ -13,12 +13,12 @@ public class CursorController : MonoBehaviour
         instance = this;
     }
 
-    public void ActiateRedAimCursor()
+    public void ActivateRedAimCursor()
     {
         Cursor.SetCursor(redAimCursor, new Vector2(redAimCursor.width / 2, redAimCursor.height / 2), CursorMode.Auto);
     }
 
-    public void ActiateAimCursor()
+    public void ActivateAimCursor()
     {
         Cursor.SetCursor(aimCursor, new Vector2(aimCursor.width / 2, aimCursor.height / 2), CursorMode.Auto);
     }

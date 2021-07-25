@@ -14,7 +14,6 @@ public class ShipController : MonoBehaviour
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         screenCenter.x = Screen.width * .5f;
@@ -23,7 +22,6 @@ public class ShipController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    // Update is called once per frame
     void Update()
     {
         lookInput.x = Input.mousePosition.x;
