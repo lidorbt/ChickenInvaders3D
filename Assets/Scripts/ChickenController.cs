@@ -17,9 +17,15 @@ public class ChickenController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Bullet")
+        {
+            Debug.Log("Bullet Collision");
+            Destroy(gameObject);
+        }
+
         if (other.tag == "Player")
         {
-            Debug.Log("Collision");
+            Debug.Log("Player Collision");
             Destroy(gameObject);
         }
     }
