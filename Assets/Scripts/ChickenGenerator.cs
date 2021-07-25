@@ -7,7 +7,7 @@ public class ChickenGenerator : MonoBehaviour
     public float spawnRange;
     public float amountToSpawn;
     private Vector3 spawnPoint;
-    public GameObject asteroid;
+    public GameObject chicken;
     public float startSafeRange;
     private List<GameObject> objectsToPlace = new List<GameObject>();
 
@@ -24,11 +24,11 @@ public class ChickenGenerator : MonoBehaviour
                 PickSpawnPoint();
             }
 
-            objectsToPlace.Add(Instantiate(asteroid, spawnPoint, Quaternion.Euler(Random.Range(0f,360f), Random.Range(0f, 360f), Random.Range(0f, 360f))));
+            objectsToPlace.Add(Instantiate(chicken, spawnPoint, Quaternion.Euler(Random.Range(0f,360f), Random.Range(0f, 360f), Random.Range(0f, 360f))));
             objectsToPlace[i].transform.parent = this.transform;
         }
 
-        asteroid.SetActive(false);
+        chicken.SetActive(false);
     }
 
     // Update is called once per frame
