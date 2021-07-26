@@ -34,7 +34,6 @@ public class ChickenGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void PickSpawnPoint()
