@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SpaceshipSelection.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
+    path: Assets/Scenes/Game.unity
+    guid: d4c867b60215b044b8de700122ca6db8
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: a8f78f8418d59df429f0a7a87808d365
   - enabled: 0
