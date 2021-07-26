@@ -5,7 +5,6 @@ public class SpaceshipSelection : MonoBehaviour
 {
 	public GameObject[] characters;
 	public int selectedCharacter = 0;
-
 	public void NextCharacter()
 	{
 		characters[selectedCharacter].SetActive(false);
@@ -27,6 +26,6 @@ public class SpaceshipSelection : MonoBehaviour
     public void StartGame()
     {
     	PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-    	SceneManager.LoadScene(1, LoadSceneMode.Single);
+    	SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }
