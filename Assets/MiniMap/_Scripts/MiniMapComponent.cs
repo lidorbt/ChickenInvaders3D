@@ -35,7 +35,7 @@ public class MiniMapComponent : MonoBehaviour {
 	MapObject mmo;
 
 	void OnEnable(){
-		miniMapController = GameObject.Find ("CanvasMiniMap").GetComponent<MiniMapController> ();
+		miniMapController = GameObject.Find ("ForntUI").GetComponent<MiniMapController> ();
 		mme = new MiniMapEntity ();
 		mme.icon = icon;
 		mme.rotation = initialIconRotation;
@@ -49,11 +49,11 @@ public class MiniMapComponent : MonoBehaviour {
 	}
 
 	void OnDisable(){
-		miniMapController.UnregisterMapObject (mmo,this.gameObject);
+		miniMapController.UnregisterMapObject(mmo, this.gameObject);
 	}
 
 	void OnDestroy(){
-		miniMapController.UnregisterMapObject (mmo,this.gameObject);
+		miniMapController.UnregisterMapObject(mmo, this.gameObject);
 	}
 
 }

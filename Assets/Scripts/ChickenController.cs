@@ -5,16 +5,6 @@ using UnityEngine.AI;
 
 public class ChickenController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
@@ -25,8 +15,9 @@ public class ChickenController : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Debug.Log("Player Collision");
+            Debug.Log("Player Collision, Life lost");
             Destroy(gameObject);
+            HeartSystem.instance.TakeDamage();
         }
     }
 
