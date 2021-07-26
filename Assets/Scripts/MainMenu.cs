@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void OnVolumeChange(float volume)
+    {
+        PlayerPrefs.SetFloat("volume", volume);
+        Debug.Log(PlayerPrefs.GetFloat("volume"));
+    }
+
     public void QuitGame()
     {
         Debug.Log("QuitGame");
