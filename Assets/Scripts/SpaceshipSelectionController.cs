@@ -6,7 +6,7 @@ public class SpaceshipSelectionController : MonoBehaviour
 {
     void Update()
     {
-        transform.Rotate(0, 0, 40 * Time.deltaTime,  Space.Self);
+        transform.Rotate(0, 0, -40 * Time.deltaTime,  Space.Self);
     }
 
 }

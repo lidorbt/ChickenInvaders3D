@@ -12,16 +12,33 @@ public class PlayerShipModel : MonoBehaviour
     {
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
 
-        selectedCharacter = 0;
+        playerShipModel = Instantiate(characters[selectedCharacter], transform.position, transform.rotation);
+        playerShipModel.tag = "Player";
+        
+        MeshCollider shipMeshCollider = playerShipModel.AddComponent<MeshCollider>();
+        shipMeshCollider.convex = true;
+        shipMeshCollider.isTrigger = true;
 
-        Quaternion rotaion = transform.rotation;
-        rotaion.y += 180;
-        playerShipModel = Instantiate(characters[selectedCharacter], transform.position, rotaion);
+        Rigidbody shipRigidbody = playerShipModel.AddComponent<Rigidbody>();
+        shipRigidbody.isKinematic = true;
+        shipRigidbody.useGravity = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerShipModel.transform.position = transform.position;
+
+        Debug.Log("SHAHAR 2: " + transform.rotation);
+        playerShipModel.transform.rotation = transform.rotation;
+        Debug.Log("SHAHAR 3: " + playerShipModel.transform.rotation);
+    }
+
+    private Quaternion flipShip(Quaternion currentRotation)
+    {
+        Quaternion rotation = currentRotation;
+        rotation.y += 180;
         
+        return rotation;
     }
 }
