@@ -28,5 +28,7 @@ public class ExplodeScript : MonoBehaviour
 
             Destroy(t.gameObject, destroyDelay);
         }
+
+        Destroy(gameObject, destroyDelay);
     }
 }
