@@ -12,16 +12,20 @@ public class GamePauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        PauseControl.instance.gameIsPaused = false;
         Time.timeScale = 1f;
+        gameObject.SetActive(false);
     }
 
     public void RestartGame()
     {
+        ResumeGame();
         SceneManager.LoadScene(2);
     }
 
     public void OpenMainMenu()
     {
+        ResumeGame();
         SceneManager.LoadScene(0);
     }
 }

@@ -23,7 +23,13 @@ public class ChickenController : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        CursorController.instance.ActivateRedAimCursor();
+        bool isGameOver = HeartSystem.instance.isGameOver;
+        bool gameIsPaused = PauseControl.instance.gameIsPaused;
+
+        if (!isGameOver && !gameIsPaused)
+        {
+            CursorController.instance.ActivateRedAimCursor();
+        }
     }
 
     private void OnMouseExit()

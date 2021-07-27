@@ -15,6 +15,7 @@ public class HeartSystem : MonoBehaviour
     {
         instance = this;
     }
+
     private void Start()
     {
         life = hearts.Length;
