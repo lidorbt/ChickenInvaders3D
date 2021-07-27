@@ -11,6 +11,7 @@ public class ChickenController : MonoBehaviour
         {
             Debug.Log("Bullet Collision");
             Destroy(gameObject);
+            Score.instance.IncreaseScore();
         }
 
         if (other.tag == "Player")
@@ -18,6 +19,7 @@ public class ChickenController : MonoBehaviour
             Debug.Log("Player Collision, Life lost");
             Destroy(gameObject);
             HeartSystem.instance.TakeDamage();
+            Score.instance.IncreaseScore();
         }
     }
 
