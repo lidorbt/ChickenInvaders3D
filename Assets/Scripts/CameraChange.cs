@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraChange: MonoBehaviour
 {
     public GameObject thirdCam, firstCam;
-    public int CamMode = 0;
-
+    public static int CamMode = 0;
+    public GameObject cockpitBackground;
 
     void Update()
     {
@@ -30,12 +30,14 @@ public class CameraChange: MonoBehaviour
         {
             thirdCam.SetActive(true);
             firstCam.SetActive(false);
+            cockpitBackground.SetActive(false);
         }
         
         if(CamMode == 1)
         {
             thirdCam.SetActive(false);
             firstCam.SetActive(true);
+            cockpitBackground.SetActive(true);
         }
     }
 }
