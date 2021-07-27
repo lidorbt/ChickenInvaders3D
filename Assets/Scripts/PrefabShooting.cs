@@ -15,8 +15,9 @@ public class PrefabShooting : MonoBehaviour
     void Update()
     {
         bool isGameOver = HeartSystem.instance.isGameOver;
+        bool gameIsPaused = PauseControl.instance.gameIsPaused;
 
-        if (Input.GetMouseButtonDown(0) && !isGameOver)
+        if (Input.GetMouseButtonDown(0) && !isGameOver && !gameIsPaused)
         {
             var bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
 
