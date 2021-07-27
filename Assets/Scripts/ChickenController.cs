@@ -20,10 +20,10 @@ public class ChickenController : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player Collision, Life lost");
-            Destroy(gameObject);
+            Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             HeartSystem.instance.TakeDamage();
             Score.instance.IncreaseScore();
-            Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
+            Destroy(gameObject);
         }
     }
 
