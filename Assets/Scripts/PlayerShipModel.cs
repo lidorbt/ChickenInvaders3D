@@ -29,9 +29,7 @@ public class PlayerShipModel : MonoBehaviour
     {
         playerShipModel.transform.position = transform.position;
 
-        Debug.Log("SHAHAR 2: " + transform.rotation);
         playerShipModel.transform.rotation = transform.rotation;
-        Debug.Log("SHAHAR 3: " + playerShipModel.transform.rotation);
     }
 
     private Quaternion flipShip(Quaternion currentRotation)

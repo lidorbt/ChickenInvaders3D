@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class PauseControl : MonoBehaviour
 {
-    public static bool gameIsPaused;
-    public GameObject gamePauseMenu;
+    public static PauseControl instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
+    public bool gameIsPaused;
+    public GameObject gamePauseMenu;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        bool isGameOver = HeartSystem.instance.isGameOver;
+        
+        if (Input.GetKeyDown(KeyCode.P) && !isGameOver)
         {
             gameIsPaused = !gameIsPaused;
             PauseGame();
@@ -20,6 +27,7 @@ public class PauseControl : MonoBehaviour
     {
         if (gameIsPaused)
         {
+            //gamePauseMenu.sort
             Time.timeScale = 0f;
             gamePauseMenu.SetActive(true);
         }
