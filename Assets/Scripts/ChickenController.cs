@@ -5,13 +5,16 @@ using UnityEngine.AI;
 
 public class ChickenController : MonoBehaviour
 {
+    public GameObject deadChicken;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
         {
             Debug.Log("Bullet Collision");
-            Destroy(gameObject);
+            Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             Score.instance.IncreaseScore();
+            Destroy(gameObject);
         }
 
         if (other.tag == "Player")
@@ -20,6 +23,7 @@ public class ChickenController : MonoBehaviour
             Destroy(gameObject);
             HeartSystem.instance.TakeDamage();
             Score.instance.IncreaseScore();
+            Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
         }
     }
 
