@@ -35,7 +35,7 @@ public class MiniMapComponent : MonoBehaviour {
 	MapObject mmo;
 
 	void OnEnable(){
-		miniMapController = GameObject.Find ("ForntUI").GetComponent<MiniMapController> ();
+		miniMapController = GameObject.Find ("FrontUI").GetComponent<MiniMapController> ();
 		mme = new MiniMapEntity ();
 		mme.icon = icon;
 		mme.rotation = initialIconRotation;

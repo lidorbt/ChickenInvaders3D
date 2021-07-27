@@ -8,7 +8,8 @@ public class HeartSystem : MonoBehaviour
 
     public GameObject[] hearts;
     private int life;
-    private bool dead;
+    public bool isGameOver;
+    public GameObject gameOverMenu;
 
     private void Awake()
     {
@@ -21,10 +22,10 @@ public class HeartSystem : MonoBehaviour
 
     void Update()
     {
-        if(dead == true)
+        if(isGameOver == true)
         {
-            Debug.Log("Game Over, all hearts lost");
-            //TODO: SET GAME OVER
+            //Debug.Log("Game Over, all hearts lost");
+            gameOverMenu.SetActive(true);
         }
     }
 
@@ -36,7 +37,7 @@ public class HeartSystem : MonoBehaviour
             Destroy(hearts[life].gameObject);
             if (life < 1)
             {
-                dead = true;
+                isGameOver = true;
             }
         }
     }
