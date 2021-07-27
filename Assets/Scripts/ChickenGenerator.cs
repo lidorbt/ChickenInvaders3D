@@ -39,9 +39,9 @@ public class ChickenGenerator : MonoBehaviour
     public void PickSpawnPoint()
     {
         spawnPoint = new Vector3(
-            Random.Range(-1f,1f),
-            Random.Range(-1f, 1f),
-            Random.Range(-1f, 1f));
+            Random.Range(-10f,10f),
+            Random.Range(-10f, 10f),
+            Random.Range(-10f, 10f));
 
         if(spawnPoint.magnitude > 1)
         {

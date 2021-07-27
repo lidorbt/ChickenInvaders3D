@@ -25,7 +25,6 @@ public class HeartSystem : MonoBehaviour
     {
         if(isGameOver == true)
         {
-            //Debug.Log("Game Over, all hearts lost");
             gameOverMenu.SetActive(true);
         }
     }
