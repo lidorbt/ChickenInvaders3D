@@ -34,14 +34,11 @@ public class AgentScript : MonoBehaviour
         {
             Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             transform.position = spawnPoint.position;
-            //Destroy(gameObject);
         }
 
         if (other.tag == "Finish")
         {
-            //Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             transform.position = spawnPoint.position;
-            //Destroy(gameObject);
         }
     }
 }
