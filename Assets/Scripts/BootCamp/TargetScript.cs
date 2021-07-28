@@ -10,7 +10,6 @@ public class TargetScript : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("blasas");
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
