@@ -17,10 +17,16 @@ public class ChickenController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 toTarget = Vector3.Normalize(player.transform.position - transform.position);
-        float speed = 12f + (0.2f * (Time.realtimeSinceStartup - startingTime));
+        bool isGameOver = HeartSystem.instance.isGameOver;
+        bool gameIsPaused = PauseControl.instance.gameIsPaused;
 
-        body.velocity = toTarget * speed;
+        if (!isGameOver && !gameIsPaused)
+        {
+            Vector3 toTarget = Vector3.Normalize(player.transform.position - transform.position);
+            float speed = Random.Range(10f, 14f) + (0.2f * (Time.realtimeSinceStartup - startingTime));
+
+            body.velocity = toTarget * speed;
+        }
     }
 
     public GameObject deadChicken;
@@ -29,7 +35,6 @@ public class ChickenController : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            Debug.Log("Bullet Collision");
             Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             Score.instance.IncreaseScore();
             Destroy(gameObject);
@@ -37,7 +42,6 @@ public class ChickenController : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Debug.Log("Player Collision, Life lost");
             Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             HeartSystem.instance.TakeDamage();
             Score.instance.IncreaseScore();

@@ -7,9 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Debug.Log("PlayGame");
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void PlayBootcamp()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void OnVolumeChange(float volume)
@@ -20,8 +23,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QuitGame");
-
         Application.Quit();
     }
 }

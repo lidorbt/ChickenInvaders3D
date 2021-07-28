@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ship Flight.unity
     guid: 4aeb16a6756e49949905cccb09748425
+  - enabled: 1
+    path: Assets/Scenes/BootCampZone.unity
+    guid: d4c867b60215b044b8de700122ca6db8
   m_configObjects: {}

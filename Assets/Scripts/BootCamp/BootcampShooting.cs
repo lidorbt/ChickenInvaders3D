@@ -14,7 +14,9 @@ public class BootcampShooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        bool gameIsPaused = PauseControlBootcamp.instance.gameIsPaused;
+
+        if (Input.GetMouseButtonDown(0) && !gameIsPaused)
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -22,7 +24,7 @@ public class BootcampShooting : MonoBehaviour
 
             bulletClone.velocity += mouseRay.direction * speed;
 
-            Destroy(bulletClone.gameObject, 3);
+            Destroy(bulletClone.gameObject, 2);
         }
     }
 }

@@ -27,7 +27,6 @@ public class PauseControl : MonoBehaviour
     {
         if (gameIsPaused)
         {
-            //gamePauseMenu.sort
             Time.timeScale = 0f;
             gamePauseMenu.SetActive(true);
         }
