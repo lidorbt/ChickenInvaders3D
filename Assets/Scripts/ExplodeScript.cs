@@ -23,7 +23,6 @@ public class ExplodeScript : MonoBehaviour
             if(rb != null)
             {
                 rb.AddExplosionForce(Random.Range(minForce, maxForce), transform.position, radius);
-                //rb.AddExplosionForce(50000, transform.position, radius);
             }
 
             Destroy(t.gameObject, destroyDelay);

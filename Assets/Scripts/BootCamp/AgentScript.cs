@@ -8,6 +8,7 @@ public class AgentScript : MonoBehaviour
     NavMeshAgent agent;
     public Transform target;
     public Transform spawnPoint;
+    public GameObject deadChicken;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class AgentScript : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            //Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
+            Instantiate(deadChicken, transform.position, transform.rotation).SetActive(true);
             transform.position = spawnPoint.position;
             //Destroy(gameObject);
         }
