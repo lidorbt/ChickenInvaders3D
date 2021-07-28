@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseControl : MonoBehaviour
+public class PauseControlBootcamp : MonoBehaviour
 {
-    public static PauseControl instance;
+    public static PauseControlBootcamp instance;
+
     private void Awake()
     {
         instance = this;
@@ -14,9 +15,7 @@ public class PauseControl : MonoBehaviour
     public GameObject gamePauseMenu;
     void Update()
     {
-        bool isGameOver = HeartSystem.instance.isGameOver;
-        
-        if (Input.GetKeyDown(KeyCode.P) && !isGameOver)
+        if (Input.GetKeyDown(KeyCode.P))
         {
             gameIsPaused = !gameIsPaused;
             PauseGame();
@@ -27,6 +26,7 @@ public class PauseControl : MonoBehaviour
     {
         if (gameIsPaused)
         {
+            //gamePauseMenu.sort
             Time.timeScale = 0f;
             gamePauseMenu.SetActive(true);
         }
